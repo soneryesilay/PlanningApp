@@ -1,0 +1,37 @@
+/* Çan animasyonu - Bell Ringing Effect */
+@keyframes bell-ring {
+  0% { transform: rotate(0); }
+  10% { transform: rotate(15deg); }
+  20% { transform: rotate(-15deg); }
+  30% { transform: rotate(10deg); }
+  40% { transform: rotate(-10deg); }
+  50% { transform: rotate(5deg); }
+  60% { transform: rotate(-5deg); }
+  70% { transform: rotate(2deg); }
+  80% { transform: rotate(-2deg); }
+  90% { transform: rotate(1deg); }
+  100% { transform: rotate(0); }
+}
+
+.bell-animation {
+  animation: bell-ring 1s ease-in-out;
+  transform-origin: top center;
+}
+
+/* Hover durumunda animasyonu sürekli tekrarla - daha güçlü seçici */
+.bell-animation:hover {
+  animation: bell-ring 0.8s ease-in-out infinite !important;
+  transform-origin: top center !important;
+}
+
+/* Buton ve ikon animasyonu */
+.notification-bell-container:hover .notification-bell-icon {
+  animation: bell-ring 0.8s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+/* Tıklama durumunda animasyon (zilCaliniyor state'i true olduğunda) */
+.notification-bell-icon.bell-animation {
+  animation: bell-ring 1s ease-in-out;
+  transform-origin: top center;
+}
